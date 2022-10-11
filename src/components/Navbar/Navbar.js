@@ -6,14 +6,19 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
+
+
+
 const src = "https://us.123rf.com/450wm/findriyani/findriyani1902/findriyani190200477/116365758-vector-logo-de-smartphone.jpg?ver=6"
 
 
 const Navbar1 =() =>{
+  
     return(
         <Navbar bg="secondary" expand="lg">
         <Container fluid>
-            <img  src ={src} className="logo"/>
+            <img src ={src} className="logo"/>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -21,13 +26,13 @@ const Navbar1 =() =>{
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                <Nav.Link href="#action1">Inicio</Nav.Link>
+                  <Link to='/'>
+                        <Nav.Link href="#action1">Inicio</Nav.Link>
+                  </Link>
                 <Nav.Link href="#action2">Productos</Nav.Link>
                 <NavDropdown title="Productos" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Celulares</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                    Televisores
-                </NavDropdown.Item>
+                <NavDropdown.Item href="#action4">Televisores</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action5">
                     Destacados
